@@ -11,6 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Marquee from "react-fast-marquee";
 
 const transformationCards = [
   {
@@ -277,44 +278,72 @@ export default function TransformationsPage() {
           </FadeIn>
 
           <div className="mx-auto mt-12 max-w-7xl space-y-12">
-            {/* Row 1 */}
-            <div className="w-full" role="group" aria-label="Client testimonials row 1" data-analytics="testimonials-row-1">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: false,
-                  dragFree: true,
-                }}
-                className="w-full cursor-grab active:cursor-grabbing"
-              >
-                <CarouselContent className="-ml-4 pb-4 cursor-grab active:cursor-grabbing">
-                  {testimonialsRow1.map((testimonial) => (
-                    <CarouselItem key={testimonial.name} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
-                      <TestimonialCard testimonial={testimonial} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
+            {/* Desktop View (Carousel) */}
+            <div className="hidden md:block space-y-12">
+              {/* Row 1 */}
+              <div className="w-full" role="group" aria-label="Client testimonials row 1" data-analytics="testimonials-row-1">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: false,
+                    dragFree: true,
+                  }}
+                  className="w-full cursor-grab active:cursor-grabbing"
+                >
+                  <CarouselContent className="-ml-4 pb-4 cursor-grab active:cursor-grabbing">
+                    {testimonialsRow1.map((testimonial) => (
+                      <CarouselItem key={testimonial.name} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+                        <TestimonialCard testimonial={testimonial} />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
+
+              {/* Row 2 */}
+              <div className="w-full" role="group" aria-label="Client testimonials row 2" data-analytics="testimonials-row-2">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: false,
+                    dragFree: true,
+                  }}
+                  className="w-full cursor-grab active:cursor-grabbing"
+                >
+                  <CarouselContent className="-ml-4 pb-4 cursor-grab active:cursor-grabbing">
+                    {testimonialsRow2.map((testimonial) => (
+                      <CarouselItem key={testimonial.name} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+                        <TestimonialCard testimonial={testimonial} />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
             </div>
 
-            {/* Row 2 */}
-            <div className="w-full" role="group" aria-label="Client testimonials row 2" data-analytics="testimonials-row-2">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: false,
-                  dragFree: true,
-                }}
-                className="w-full cursor-grab active:cursor-grabbing"
-              >
-                <CarouselContent className="-ml-4 pb-4 cursor-grab active:cursor-grabbing">
-                  {testimonialsRow2.map((testimonial) => (
-                    <CarouselItem key={testimonial.name} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+            {/* Mobile View (Infinite Marquee) */}
+            <div className="block md:hidden space-y-8">
+              {/* Row 1 - Scroll Right */}
+              <div className="w-full">
+                <Marquee direction="right" speed={40} gradient={false} className="py-4">
+                  {testimonialsRow1.map((testimonial) => (
+                    <div key={testimonial.name} className="mx-4 w-[300px]">
                       <TestimonialCard testimonial={testimonial} />
-                    </CarouselItem>
+                    </div>
                   ))}
-                </CarouselContent>
-              </Carousel>
+                </Marquee>
+              </div>
+
+              {/* Row 2 - Scroll Left */}
+              <div className="w-full">
+                <Marquee direction="left" speed={40} gradient={false} className="py-4">
+                  {testimonialsRow2.map((testimonial) => (
+                    <div key={testimonial.name} className="mx-4 w-[300px]">
+                      <TestimonialCard testimonial={testimonial} />
+                    </div>
+                  ))}
+                </Marquee>
+              </div>
             </div>
           </div>
         </section>
