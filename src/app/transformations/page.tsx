@@ -278,24 +278,24 @@ export default function TransformationsPage() {
           </FadeIn>
 
           <div className="mx-auto mt-12 max-w-7xl space-y-12">
-            {/* Mobile View: Infinite Scroll Marquee */}
-            <div className="block md:hidden space-y-8">
-              {/* Row 1: Left Scroll */}
+            {/* Mobile View - Infinite Scroll */}
+            <div className="block lg:hidden space-y-8">
+              {/* Row 1 - Left */}
               <div className="w-full">
-                <Marquee speed={40} direction="left" gradient={false}>
+                <Marquee direction="left" speed={40} pauseOnHover>
                   {testimonialsRow1.map((testimonial) => (
-                    <div key={testimonial.name} className="mx-4 w-[300px]">
+                    <div key={testimonial.name} className="px-4 py-2 w-[320px]">
                       <TestimonialCard testimonial={testimonial} />
                     </div>
                   ))}
                 </Marquee>
               </div>
 
-              {/* Row 2: Right Scroll */}
+              {/* Row 2 - Right */}
               <div className="w-full">
-                <Marquee speed={40} direction="right" gradient={false}>
+                <Marquee direction="right" speed={40} pauseOnHover>
                   {testimonialsRow2.map((testimonial) => (
-                    <div key={testimonial.name} className="mx-4 w-[300px]">
+                    <div key={testimonial.name} className="px-4 py-2 w-[320px]">
                       <TestimonialCard testimonial={testimonial} />
                     </div>
                   ))}
@@ -303,8 +303,8 @@ export default function TransformationsPage() {
               </div>
             </div>
 
-            {/* Desktop View: Carousel */}
-            <div className="hidden md:block space-y-12">
+            {/* Desktop View - Carousel */}
+            <div className="hidden lg:block space-y-12">
               {/* Row 1 */}
               <div className="w-full" role="group" aria-label="Client testimonials row 1" data-analytics="testimonials-row-1">
                 <Carousel
