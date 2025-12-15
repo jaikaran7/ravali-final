@@ -78,68 +78,58 @@ const transformationCards = [
 
 const testimonials = [
   {
-    name: "Hanuma Devabhakthuni",
+    name: "Priya S.",
     quote:
-      "I have been visiting Ravali Kanmani Nutrition and Wellness Center for 11 months. It is a complete holistic wellness center with personalized nutrition guidance and education. Ravali Kanmani Madam understands individual needs and creates customized plans. Their focus on education helps achieve sustainable wellness. Highly recommended.",
+      "Lost 15kg in 3 months! The personalised approach made all the difference. Ravali's guidance was life-changing.",
     rating: 5,
-    designation: "",
-    photo: "https://ui-avatars.com/api/?name=Hanuma+Devabhakthuni&background=10b981&color=fff",
+    designation: "Weight Loss Journey",
+    photo:
+      "https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=256&q=80",
   },
   {
-    name: "Jeevan Salkapuram",
+    name: "Anjali R.",
     quote:
-      "I strongly recommend Ravali Kanmani Nutrition Center for a healthy lifestyle. Genuine experience with good results, positive atmosphere, and eco-friendly environment.",
+      "My PCOD symptoms improved significantly with Ravali's guidance. I feel more energetic and confident.",
     rating: 5,
-    designation: "",
-    photo: "https://ui-avatars.com/api/?name=Jeevan+Salkapuram&background=10b981&color=fff",
+    designation: "PCOD Management",
+    photo:
+      "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=256&q=80",
   },
   {
-    name: "Anitha Chowdary",
+    name: "Meera K.",
     quote:
-      "I am very happy. I lost 20 kg weight with Ravali Kanmani Nutrition and Wellness Center.",
+      "The meal plans were so easy to follow. I never felt deprived and still achieved my weight loss goals.",
     rating: 5,
-    designation: "",
-    photo: "https://ui-avatars.com/api/?name=Anitha+Chowdary&background=10b981&color=fff",
+    designation: "Sustainable Weight Loss",
+    photo:
+      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=256&q=80",
   },
   {
-    name: "Mamatha Reddy",
+    name: "Rakesh P.",
     quote:
-      "I lost 18 kg and controlled my HbA1c. Now living a healthy and active lifestyle. Thank you for the support.",
+      "Strength training + customised meals helped me get lean without losing energy.",
     rating: 5,
-    designation: "",
-    photo: "https://ui-avatars.com/api/?name=Mamatha+Reddy&background=10b981&color=fff",
+    designation: "Reduced body fat by 12%",
+    photo:
+      "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=256&q=80",
   },
   {
-    name: "Boddu Sridhar",
+    name: "Anita M.",
     quote:
-      "I reduced around 14 kg weight with the guidance of Ravali Madam.",
+      "Small habit changes and focused nutrition transformed my daily energy levels.",
     rating: 5,
-    designation: "",
-    photo: "https://ui-avatars.com/api/?name=Boddu+Sridhar&background=10b981&color=fff",
+    designation: "Improved digestion & energy",
+    photo:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=256&q=80",
   },
   {
-    name: "Sai Lakshmi",
+    name: "Vikram T.",
     quote:
-      "Now I am leading a healthy, active, and medicine-free lifestyle.",
+      "Macro tracking and recovery planning made progress steady and sustainable.",
     rating: 5,
-    designation: "",
-    photo: "https://ui-avatars.com/api/?name=Sai+Lakshmi&background=10b981&color=fff",
-  },
-  {
-    name: "Devi Priya",
-    quote:
-      "I am happy with the health guidance of Ravali Madam.",
-    rating: 5,
-    designation: "SS Laundry & Dry Cleaners",
-    photo: "https://ui-avatars.com/api/?name=Devi+Priya&background=10b981&color=fff",
-  },
-  {
-    name: "Syeda Aiman",
-    quote:
-      "Best experience.",
-    rating: 5,
-    designation: "",
-    photo: "https://ui-avatars.com/api/?name=Syeda+Aiman&background=10b981&color=fff",
+    designation: "Maintained muscle while losing fat",
+    photo:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
   },
 ];
 
@@ -206,6 +196,9 @@ export default function TransformationsPage() {
   // Split cards into two rows
   const transformRow1 = transformationCards.slice(0, 3);
   const transformRow2 = transformationCards.slice(3, 6);
+
+  const testimonialsRow1 = testimonials.slice(0, 3);
+  const testimonialsRow2 = testimonials.slice(3, 6);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#f9f5ee]">
@@ -290,7 +283,7 @@ export default function TransformationsPage() {
               {/* Row 1: Left Scroll */}
               <div className="w-full">
                 <Marquee speed={40} direction="left" gradient={false}>
-                  {testimonials.slice(0, testimonials.length / 2).map((testimonial) => (
+                  {testimonialsRow1.map((testimonial) => (
                     <div key={testimonial.name} className="mx-4 w-[300px]">
                       <TestimonialCard testimonial={testimonial} />
                     </div>
@@ -301,7 +294,7 @@ export default function TransformationsPage() {
               {/* Row 2: Right Scroll */}
               <div className="w-full">
                 <Marquee speed={40} direction="right" gradient={false}>
-                  {testimonials.slice(testimonials.length / 2).map((testimonial) => (
+                  {testimonialsRow2.map((testimonial) => (
                     <div key={testimonial.name} className="mx-4 w-[300px]">
                       <TestimonialCard testimonial={testimonial} />
                     </div>
@@ -310,13 +303,47 @@ export default function TransformationsPage() {
               </div>
             </div>
 
-            {/* Desktop View: Grid */}
-            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.name} className="h-full">
-                  <TestimonialCard testimonial={testimonial} />
-                </div>
-              ))}
+            {/* Desktop View: Carousel */}
+            <div className="hidden md:block space-y-12">
+              {/* Row 1 */}
+              <div className="w-full" role="group" aria-label="Client testimonials row 1" data-analytics="testimonials-row-1">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: false,
+                    dragFree: true,
+                  }}
+                  className="w-full cursor-grab active:cursor-grabbing"
+                >
+                  <CarouselContent className="-ml-4 pb-4 cursor-grab active:cursor-grabbing">
+                    {testimonialsRow1.map((testimonial) => (
+                      <CarouselItem key={testimonial.name} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+                        <TestimonialCard testimonial={testimonial} />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
+
+              {/* Row 2 */}
+              <div className="w-full" role="group" aria-label="Client testimonials row 2" data-analytics="testimonials-row-2">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: false,
+                    dragFree: true,
+                  }}
+                  className="w-full cursor-grab active:cursor-grabbing"
+                >
+                  <CarouselContent className="-ml-4 pb-4 cursor-grab active:cursor-grabbing">
+                    {testimonialsRow2.map((testimonial) => (
+                      <CarouselItem key={testimonial.name} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+                        <TestimonialCard testimonial={testimonial} />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
             </div>
           </div>
         </section>
