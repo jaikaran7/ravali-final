@@ -59,6 +59,31 @@ export default function GalleryPage() {
       src: "/gallery/gallery-10.jpg",
       alt: "Team Success",
       height: "tall"
+    },
+    {
+      src: "/gallery/gallery-11.jpg",
+      alt: "Community Gathering",
+      height: "tall"
+    },
+    {
+      src: "/gallery/gallery-12.png",
+      alt: "Wellness Workshop",
+      height: "medium"
+    },
+    {
+      src: "/gallery/gallery-13.jpg",
+      alt: "Celebration Event",
+      height: "tall"
+    },
+    {
+      src: "/gallery/gallery-14.jpg",
+      alt: "Group Session",
+      height: "medium"
+    },
+    {
+      src: "/gallery/gallery-15.jpg",
+      alt: "Team Activity",
+      height: "tall"
     }
   ];
 
