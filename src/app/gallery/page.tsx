@@ -84,6 +84,16 @@ export default function GalleryPage() {
       src: "/gallery/gallery-15.jpg",
       alt: "Team Activity",
       height: "tall"
+    },
+    {
+      src: "/gallery/gallery-16.jpg",
+      alt: "Transformation Journey",
+      height: "tall"
+    },
+    {
+      src: "/gallery/gallery-17.jpg",
+      alt: "Weight Loss Success",
+      height: "tall"
     }
   ];
 
